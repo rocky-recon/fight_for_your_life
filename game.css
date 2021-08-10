@@ -3,13 +3,14 @@ html,
 body {
   height: 100vh;
   width: 100vw;
-  /* align-content: space-around; */
+  align-content: space-around;
   background-color: #38b5ff;
   color: #ffca88;
-  /* display: grid;
-  justify-content: center; */
+  display: grid;
+  justify-content: center;
   font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
+  word-wrap: break-word;
 }
 
 @media (max-width: 767px) {

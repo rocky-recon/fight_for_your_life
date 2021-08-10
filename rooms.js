@@ -4,8 +4,8 @@ var rooms = {
       south: "Road",
       east: "Yard",
     },
-    desctiprtion:
-      "You're Affliction shirt matches with your truck. You can go south to the road or east to your yard",
+    description:
+      "You're Affliction shirt matches with your truck. You can go <b>south</b> to the road or <b>east</b> to your yard",
 
     // spell: "skoal wintergreen dip",
     // spell_desc: "back pocket of jeans",
@@ -16,8 +16,11 @@ var rooms = {
   },
 
   road: {
+    directons: {
+      north: "Go <b>north</b> if you want to continue playing the game",
+    },
     // #you won the game
-    desc: "You have won the game",
+    description: "You have won the game",
   },
 
   yard: {
@@ -26,7 +29,7 @@ var rooms = {
       south: "House",
     },
     description:
-      "There are toys on the ground. You can go norht to the Shed or south to the House.",
+      "There are toys on the ground. You can go <b>north</b> to the Shed or <b>south</b> to the House.",
 
     item: "dog poop",
     item_desc: "The chihuahua strikes again",
