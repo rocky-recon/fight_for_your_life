@@ -1,6 +1,6 @@
 var currentRoom = "start";
 var commands = ["go", "grab", "inventory", "talk"];
-var inventory = ["sword", "shield"];
+var inventory = ["dog tags", "high and tight"];
 
 function changeRoom(dir) {
   if (rooms[currentRoom].directions[dir] !== undefined) {
@@ -53,6 +53,10 @@ function playerInput(input) {
     default:
       $("#game-text").append("<p>Invalid command!</p>");
   }
+}
+
+function clearInput() {
+  document.getElementById("rooms").value = "";
 }
 
 $(document).ready(function () {

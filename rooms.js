@@ -1,36 +1,35 @@
 var rooms = {
   start: {
-    directions: {
-      south: "Road",
-      east: "Yard",
-    },
     description:
-      "You're Affliction shirt matches with your truck. You can go <b>south</b> to the road or <b>east</b> to your yard",
-
-    // spell: "skoal wintergreen dip",
-    // spell_desc: "back pocket of jeans",
-    // health: "monster energy drink",
-    // health_desc: "Monster Energy Drink gives energy but hurts your health",
-    // random_CQC: 0,
-    // 'pic' : hippo_pic("truck_map.txt"),
+      "You're Affliction shirt matches with your truck. <br> You can go <b>south</b> to the road or <b>east</b> to your yard",
+    directions: {
+      south: "road",
+      east: "yard",
+    },
+    item: {
+      dip: "skoal wintergreen dip in the back pocket of your jeans",
+    },
+    health: {
+      energy: "monster energy drink gives energy but hurts your health",
+    },
+    random_CQC: 0,
   },
 
   road: {
-    directons: {
-      north: "Go <b>north</b> if you want to continue playing the game",
-    },
     // #you won the game
     description: "You have won the game",
+    directons: {
+      north: "go <b>north</b> if you want to continue playing the game",
+    },
   },
 
   yard: {
-    directions: {
-      north: "Shed",
-      south: "House",
-    },
     description:
-      "There are toys on the ground. You can go <b>north</b> to the Shed or <b>south</b> to the House.",
-
+      "There are toys on the ground. <br> You can go <b>north</b> to the Shed or <b>south</b> to the House.",
+    directions: {
+      north: "shed",
+      south: "house",
+    },
     item: "dog poop",
     item_desc: "The chihuahua strikes again",
     random_CQC: 30,
@@ -38,11 +37,10 @@ var rooms = {
   },
 
   shed: {
-    directions: {
-      west: "Shed",
-    },
     description: "The Shed has been here for years and offers moral support.",
-
+    directions: {
+      west: "shed",
+    },
     item: "chair",
     item_desc: "The chair is only here for moral support",
 
@@ -51,13 +49,13 @@ var rooms = {
 
   // #figure out how to make Taco Bell and Monster hurt your health'''
   house: {
-    directions: {
-      west: "Kitchen",
-      south: "Living Room",
-      east: "Hall",
-    },
     description:
-      "You're house was built before WWII and the mold is older than your grand-father. You can go north to the Kitchen, south to the Living room, or west to the hall.",
+      "You're house was built before WWII and the mold is older than your grand-father. <br> You can go <b>west</b> to the Kitchen, <b>south</b> to the Living room,<br> or <b>east</b> to the hall.",
+    directions: {
+      west: "kitchen",
+      south: "room",
+      east: "hall",
+    },
     spell: "white muscle shirt",
     spell_desc: "You're white muscle shirt can be used to attack",
 
@@ -68,26 +66,26 @@ var rooms = {
   },
 
   kitchen: {
-    directions: {
-      south: "Living Room",
-      north: "Door",
-    },
     description:
-      "The fride door is open and somehow there is PB&J on the ceiling. You can go south to the Living Room or north through a Door",
+      "The fride door is open and somehow there is PB&J on the ceiling. <br> You can go <b>south</b> to the Living Room or <b>north</b> through a Door",
+    directions: {
+      south: "room",
+      north: "door",
+    },
     health: "monster energy drink",
     health_desc: "Monster Energy Drink gives energy but hurts your health",
     random_CQC: 50,
     // 'pic' : hippo_pic("kitche_map.txt"),
   },
 
-  "Living Room": {
-    directions: {
-      east: "Hall",
-      west: "Kitchen",
-      north: "Yard",
-    },
+  room: {
     description:
-      "Live, Love, Laugh is on the wall. You can go west to the Hall",
+      "Live, Love, Laugh is on the wall. You can go <b>west</b> to the Hall",
+    directions: {
+      east: "hall",
+      west: "kitchen",
+      north: "yard",
+    },
     health: "taco bell",
     health_desc: "Taco Bell attacks your gut!!!",
 
@@ -95,13 +93,13 @@ var rooms = {
   },
 
   hall: {
-    directions: {
-      west: "Office",
-      south: "Bedroom",
-      east: "Living Room",
-    },
     description:
-      "A dark valley that takes you to your Bedroom or the office. You can go west to the Office, south to the Bedroom, or east to the living room",
+      "A dark valley that takes you to your Bedroom or the office. <br> You can go <b>west</b> to the Office, <b>south</b> to the Bedroom, or <b>east</b> to the living room",
+    directions: {
+      west: "office",
+      south: "bedroom",
+      east: "room",
+    },
     spell: "self-esteem",
     spell_desc: "Self-esteem can be used to attack",
 
@@ -109,20 +107,20 @@ var rooms = {
   },
 
   office: {
-    directions: {
-      north: "Kitchen",
-    },
     description:
       "You have entered the MLM spot. Grab your leggings and SALE! SALE! SALE!!!",
+    directions: {
+      north: "kitchen",
+    },
     item: "xbox",
     item_desc: "You have decided to hide and play COD",
   },
 
   bedroom: {
-    directions: {
-      north: "Hall",
-    },
     description: "The place you lost your soul",
+    directions: {
+      north: "hall",
+    },
     item: "ps4",
     item_desc: "Play video games to avoid responsibilities",
 
