@@ -1,7 +1,8 @@
 var currentRoom = "start";
-var commands = ["go", "grab", "inventory", "talk"];
+var commands = ["go", "grab", "inventory", "talk", "display"];
 var inventory = ["dog tags", "high and tight"];
 
+// Change room
 function changeRoom(dir) {
   if (rooms[currentRoom].directions[dir] !== undefined) {
     currentRoom = rooms[currentRoom].directions[dir];
@@ -10,6 +11,26 @@ function changeRoom(dir) {
     $("#game-text").append("<p>You cannot go that way!</p>");
   }
 }
+
+//  Get item
+function getItem(get) {
+  if (rooms[currentRoom].items[get] !== undefined) {
+    currentRoom = rooms[currentRoom].items[get];
+    $("#game-text").append("<p>" + rooms[currentRoom].items + "</p>");
+  } else {
+    $("#game-text").append("<p>Nothing to grab here!!!</p>");
+  }
+}
+
+// Search room
+// function searchRoom(search) {
+//   if (rooms[currentRoom].items[search] !== undefined) {
+//     currentRoom = rooms[currentRoom].items[search];
+//     $("#game-text").append("<p>" + rooms[currentRoom].items + "</p>");
+//   } else {
+//     $("#game-text").append("<p>Nothing to grab here!!!</p>");
+//   }
+// }
 
 function showHelp() {
   $("#game-text").append("<p>Here are the possible commands: </p>");
@@ -40,6 +61,10 @@ function playerInput(input) {
       var dir = input.split(" ")[1];
       changeRoom(dir);
       break;
+    // case "search":
+    //   var search = input.split(" ")[1];
+    //   changeRoom(search);
+    //   break;
     case "grab":
       var get = input.split(" ")[1];
       getItem(get);
@@ -55,9 +80,8 @@ function playerInput(input) {
   }
 }
 
-function clearInput() {
-  document.getElementById("rooms").value = "";
-}
+// Clear screen
+// $display.empty();
 
 $(document).ready(function () {
   $("#game-text").append("<p>" + rooms.start.description + "</p>");

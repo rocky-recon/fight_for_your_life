@@ -6,11 +6,10 @@ var rooms = {
       south: "road",
       east: "yard",
     },
-    item: {
-      dip: "skoal wintergreen dip in the back pocket of your jeans",
-    },
-    health: {
-      energy: "monster energy drink gives energy but hurts your health",
+    items: {
+      dip: "dip",
+      weapon: "skoal wintergreen dip in the back pocket of your jeans",
+      health: "monster energy drink gives energy but hurts your health",
     },
     random_CQC: 0,
   },
@@ -30,7 +29,7 @@ var rooms = {
       north: "shed",
       south: "house",
     },
-    item: "dog poop",
+    items: "dog poop",
     item_desc: "The chihuahua strikes again",
     random_CQC: 30,
     // 'pic' : hippo_pic("yard_map.txt"),
@@ -41,7 +40,7 @@ var rooms = {
     directions: {
       west: "shed",
     },
-    item: "chair",
+    items: "chair",
     item_desc: "The chair is only here for moral support",
 
     random_CQC: 0,
