@@ -1,24 +1,27 @@
 var rooms = {
   start: {
     description:
-      "You're Affliction shirt matches with your truck. <br> You can go <b>south</b> to the road or <b>east</b> to your yard",
+      "You're Affliction shirt matches with your truck. <br> Go <b>east</b> to your yard.",
     directions: {
       south: "road",
       east: "yard",
     },
     items: {
-      dip: "dip",
-      weapon: "skoal wintergreen dip in the back pocket of your jeans",
-      health: "monster energy drink gives energy but hurts your health",
+      // weapon: "dip",
+      health: "drink",
+      weapon:
+        "You feel a skoal wintergreen dip in the back pocket of your jeans",
+      // health: "monster energy drink gives energy but hurts your health",
     },
     random_CQC: 0,
   },
 
   road: {
     // #you won the game
-    description: "You have won the game",
+    description:
+      "You have won the game. <br> Go <b>north</b> if you want to continue playing the game",
     directons: {
-      north: "go <b>north</b> if you want to continue playing the game",
+      north: "start",
     },
   },
 
@@ -38,7 +41,7 @@ var rooms = {
   shed: {
     description: "The Shed has been here for years and offers moral support.",
     directions: {
-      west: "shed",
+      south: "yard",
     },
     items: "chair",
     item_desc: "The chair is only here for moral support",
@@ -79,7 +82,7 @@ var rooms = {
 
   room: {
     description:
-      "Live, Love, Laugh is on the wall. You can go <b>west</b> to the Hall",
+      "Live, Love, Laugh is on the wall. You can go <b>east</b> to the Hall, <b>west</b> to the Kitchen, or go <b>north</b> to the yard.",
     directions: {
       east: "hall",
       west: "kitchen",

@@ -1,6 +1,8 @@
 var currentRoom = "start";
 var commands = ["go", "grab", "inventory", "talk", "display"];
 var inventory = ["dog tags", "high and tight"];
+var weapons;
+// var currentItems = "items";
 
 // Change room
 function changeRoom(dir) {
@@ -13,14 +15,28 @@ function changeRoom(dir) {
 }
 
 //  Get item
-function getItem(get) {
-  if (rooms[currentRoom].items[get] !== undefined) {
-    currentRoom = rooms[currentRoom].items[get];
-    $("#game-text").append("<p>" + rooms[currentRoom].items + "</p>");
+function getItem() {
+  if (rooms[currentRoom].items.weapon !== undefined) {
+    weapons = rooms[currentRoom].items.weapon;
+    $("#game-text").append("<p>" + weapons + "</p>");
   } else {
     $("#game-text").append("<p>Nothing to grab here!!!</p>");
   }
 }
+
+// Show Items
+// function showItem() {
+//   if (rooms[currentItems].length === 0) {
+//     $("#game-text").append("<p>There are no items here!</p>");
+//     return;
+//   }
+//   $("#game-text").append("<p>Available items: </p>");
+//   $("#game-text").append("<p><ul>");
+//   for (var i = 0; i < rooms[currentItems].length; i++) {
+//     $("#game-text").append("<li>" + rooms[currentItems].length[i] + "</li>");
+//   }
+//   $("#game-text").append("</ul></p>");
+// }
 
 // Search room
 // function searchRoom(search) {
@@ -69,6 +85,9 @@ function playerInput(input) {
       var get = input.split(" ")[1];
       getItem(get);
       break;
+    case "show":
+      showItem();
+      break;
     case "help":
       showHelp();
       break;
@@ -84,7 +103,9 @@ function playerInput(input) {
 // $display.empty();
 
 $(document).ready(function () {
-  $("#game-text").append("<p>" + rooms.start.description + "</p>");
+  $("#game-text").append(
+    "<p>" + rooms.start.description + " " + rooms.start.items.weapon + "</p>"
+  );
 
   $(document).keypress(function (key) {
     if (key.which === 13 && $("#user-input").is(":focus")) {
