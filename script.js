@@ -1,8 +1,9 @@
-var currentRoom = "start";
-var commands = ["go", "grab", "inventory", "talk", "display"];
-var inventory = ["dog tags", "high and tight"];
-var weapons;
-// var currentItems = "items";
+document.getElementById("help").addEventListener("click", showHelp);
+document.getElementById("game").addEventListener("click", game);
+
+let currentRoom = "start";
+let commands = ["go", "grab", "inventory", "talk", "display"];
+let inventory = ["dog tags", "high and tight"];
 
 // Change room
 function changeRoom(dir) {
@@ -15,10 +16,10 @@ function changeRoom(dir) {
 }
 
 //  Get item
-function getItem() {
-  if (rooms[currentRoom].items.weapon !== undefined) {
-    weapons = rooms[currentRoom].items.weapon;
-    $("#game-text").append("<p>" + weapons + "</p>");
+function getItem(get) {
+  if (rooms[currentRoom].items[get] !== undefined) {
+    inventory = rooms[currentRoom].items[get];
+    $("#game-text").append("<p>" + inventory + "</p>");
   } else {
     $("#game-text").append("<p>Nothing to grab here!!!</p>");
   }
@@ -49,9 +50,11 @@ function getItem() {
 // }
 
 function showHelp() {
+  // clear screen
+  document.getElementById("game-text").innerHTML = " ";
   $("#game-text").append("<p>Here are the possible commands: </p>");
   $("#game-text").append("<p><ul>");
-  for (var i = 0; i < commands.length; i++) {
+  for (let i = 0; i < commands.length; i++) {
     $("#game-text").append("<li>" + commands[i] + "</li>");
   }
   $("#game-text").append("</ul></p>");
@@ -64,25 +67,27 @@ function showInventory() {
   }
   $("#game-text").append("<p>Here is your inventory: </p>");
   $("#game-text").append("<p><ul>");
-  for (var i = 0; i < inventory.length; i++) {
+  for (let i = 0; i < inventory.length; i++) {
     $("#game-text").append("<li>" + inventory[i] + "</li>");
   }
   $("#game-text").append("</ul></p>");
 }
 
-function playerInput(input) {
-  var command = input.split(" ")[0];
+async function playerInput(input) {
+  // clear screen
+  document.getElementById("game-text").innerHTML = " ";
+  const command = input.split(" ")[0];
   switch (command) {
     case "go":
-      var dir = input.split(" ")[1];
+      let dir = input.split(" ")[1];
       changeRoom(dir);
       break;
     // case "search":
-    //   var search = input.split(" ")[1];
+    //   let search = input.split(" ")[1];
     //   changeRoom(search);
     //   break;
     case "grab":
-      var get = input.split(" ")[1];
+      let get = input.split(" ")[1];
       getItem(get);
       break;
     case "show":
@@ -99,17 +104,35 @@ function playerInput(input) {
   }
 }
 
-// Clear screen
-// $display.empty();
+// game function
+function game() {
+  changeRoom;
+}
+
+// Help button
+// function help() {
+//   const x = document.getElementById("help");
+//   if (x.style.display === "none") {
+//     x.style.display = showHelp;
+//   } else {
+//     x.style.display = "none";
+//   }
+// }
 
 $(document).ready(function () {
   $("#game-text").append(
-    "<p>" + rooms.start.description + " " + rooms.start.items.weapon + "</p>"
+    "<p id=first-text>" +
+      rooms.start.description +
+      " " +
+      rooms.start.items.weapon_desc +
+      " " +
+      rooms.start.items.health_desc +
+      "</p>"
   );
 
   $(document).keypress(function (key) {
     if (key.which === 13 && $("#user-input").is(":focus")) {
-      var value = $("#user-input").val().toLowerCase();
+      const value = $("#user-input").val().toLowerCase();
       $("#user-input").val("");
       playerInput(value);
     }

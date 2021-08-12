@@ -1,4 +1,4 @@
-var rooms = {
+const rooms = {
   start: {
     description:
       "You're Affliction shirt matches with your truck. <br> Go <b>east</b> to your yard.",
@@ -7,11 +7,12 @@ var rooms = {
       east: "yard",
     },
     items: {
-      // weapon: "dip",
-      health: "drink",
-      weapon:
-        "You feel a skoal wintergreen dip in the back pocket of your jeans",
-      // health: "monster energy drink gives energy but hurts your health",
+      weapon: "Skoal Wintergreen Long Cut",
+      health: "Monster Energy Drink",
+      weapon_desc:
+        "You feel a skoal wintergreen dip in the back pocket of your jeans.",
+      health_desc:
+        "You see a Monster energy drink. It gives you energy but hurts your health",
     },
     random_CQC: 0,
   },
@@ -32,8 +33,10 @@ var rooms = {
       north: "shed",
       south: "house",
     },
-    items: "dog poop",
-    item_desc: "The chihuahua strikes again",
+    items: {
+      weapon: "dog poop",
+      weapon_desc: "The chihuahua strikes again",
+    },
     random_CQC: 30,
     // 'pic' : hippo_pic("yard_map.txt"),
   },
