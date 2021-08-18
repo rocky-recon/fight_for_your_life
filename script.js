@@ -1,5 +1,5 @@
-document.getElementById("help").addEventListener("click", showHelp);
-document.getElementById("game").addEventListener("click", game);
+// document.getElementById("help").addEventListener("click", showHelp);
+// document.getElementById("game").addEventListener("click", game);
 
 let currentRoom = "start";
 let commands = ["go", "grab", "inventory", "talk", "display"];
@@ -109,17 +109,29 @@ function game() {
   changeRoom;
 }
 
-// Help button
-// function help() {
-//   const x = document.getElementById("help");
-//   if (x.style.display === "none") {
-//     x.style.display = showHelp;
-//   } else {
-//     x.style.display = "none";
-//   }
-// }
+// display Help and hide it.
+$("#help").bind("click", function () {
+  document.getElementById("game-text").innerHTML = " ";
+  $("#game-text").append(
+    "<div id=help-text>" +
+      "<h4>" +
+      "You must type one of the followings: " +
+      "</h4>" +
+      "<p>" +
+      // here are the commands work on , <b>'talk'</b>, <b>'display'</b>
+      "<b>'go'</b>,<b>'grab'</b>, <b>'inventory'</b> plus" +
+      " direction, weapon, health" +
+      "</p> " +
+      "<p>" +
+      "You can pick up weapons and health in every room." +
+      "</p>" +
+      "</div>"
+  );
+});
 
-$(document).ready(function () {
+// How to Start the game from the start button
+$("#start-game").bind("click", function () {
+  document.getElementById("game-text").innerHTML = " ";
   $("#game-text").append(
     "<p id=first-text>" +
       rooms.start.description +
@@ -127,6 +139,33 @@ $(document).ready(function () {
       rooms.start.items.weapon_desc +
       " " +
       rooms.start.items.health_desc +
+      "</p>"
+  );
+});
+
+// How to show inventory of the game
+$("#inventory").bind("click", function () {
+  document.getElementById("game-text").innerHTML = " ";
+  $("#game-text").append("<p id=first-text>" + inventory + "</p>");
+});
+
+$(document).ready(function () {
+  $("#game-text").append(
+    "<h4 id=first-text>" +
+      "How To Play My Text Adventure Game" +
+      "</h4> " +
+      "<p>" +
+      "You must type one of the followings " +
+      // here are the commands work on , <b>'talk'</b>, <b>'display'</b>
+      "<b>'go'</b>,<b>'grab'</b>, <b>'inventory'</b> plus" +
+      " direction, weapon, health" +
+      "</p> " +
+      "<p>" +
+      "You can pick up weapons and health in every room." +
+      "If you need any help you can select the <b> Help </b> button below. " +
+      "</p>" +
+      "<p>" +
+      "Press Start to begin the Game. <b> Good Luck </b>" +
       "</p>"
   );
 

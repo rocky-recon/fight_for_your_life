@@ -7,7 +7,7 @@ body {
   background-color: #38b5ff;
   background: url("./img/background.png") center no-repeat;
   background-size: cover;
-  color: #ffd358;
+  color: #ffe638;
   display: grid;
   justify-content: center;
   font-family: "Montserrat", sans-serif;
@@ -17,7 +17,27 @@ body {
 }
 
 #user-input {
+  background-color: rgba(255, 56, 181, 0.5);
+  border-color: none;
+  color: #38ff82;
   width: 90%;
+}
+
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
+  color: #38ff82;
+  /* Fireforx needs the opacity */
+  opacity: 1;
+}
+
+/* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+  color: #38ff82;
+}
+
+#help-text {
+  background-color: rgba(56, 181, 255, 0.25);
+  border-radius: 5%;
 }
 
 @media (max-width: 767px) {

@@ -28,21 +28,22 @@ const rooms = {
 
   yard: {
     description:
-      "There are toys on the ground. <br> You can go <b>north</b> to the Shed or <b>south</b> to the House.",
+      "There are toys on the ground. <br> You can go <b>north</b> to the Shed or <b>south</b> to the House. The chihuahua strikes again. You can <b>grab</b> the <b>dog poop</b>",
     directions: {
       north: "shed",
       south: "house",
     },
     items: {
       weapon: "dog poop",
-      weapon_desc: "The chihuahua strikes again",
+      // weapon_desc: "The chihuahua strikes again",
     },
     random_CQC: 30,
     // 'pic' : hippo_pic("yard_map.txt"),
   },
 
   shed: {
-    description: "The Shed has been here for years and offers moral support.",
+    description:
+      "The Shed has been here for years and offers moral support. The chair is only here for moral support. You can <b>grab</b> the <b>chair!</b>",
     directions: {
       south: "yard",
     },
@@ -55,7 +56,7 @@ const rooms = {
   // #figure out how to make Taco Bell and Monster hurt your health'''
   house: {
     description:
-      "You're house was built before WWII and the mold is older than your grand-father. <br> You can go <b>west</b> to the Kitchen, <b>south</b> to the Living room,<br> or <b>east</b> to the hall.",
+      "You're house was built before WWII and the mold is older than your grand-father. <br> You can go <b>west</b> to the Kitchen, <b>south</b> to the Living room,<br> or <b>east</b> to the hall. You're white muscle shirt can be used to attack. You can <b>grab</b> your <b>white muscle shirt!</b>",
     directions: {
       west: "kitchen",
       south: "room",
