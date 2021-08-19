@@ -24,6 +24,7 @@ function getItem(get) {
   } else {
     $("#game-text").append("<p>Nothing to grab here!!!</p>");
     $("#game-text").append("<p>" + inventory + "</p>");
+    $("#game-text").append("<p>" + rooms[currentRoom].description + "</p>");
   }
 }
 
@@ -134,7 +135,8 @@ $("#inventory").bind("click", function () {
 // First screen end user sees
 $(document).ready(function () {
   $("#game-text").append(
-    "<h4 id=first-text>" +
+    "<div id=first-text>" +
+      "<h4>" +
       "How To Play My Text Adventure Game" +
       "</h4> " +
       "<p>" +
@@ -149,7 +151,8 @@ $(document).ready(function () {
       "</p>" +
       "<p>" +
       "Press Start to begin the Game. <b> Good Luck </b>" +
-      "</p>"
+      "</p>" +
+      "</div>"
   );
 
   $(document).keypress(function (key) {

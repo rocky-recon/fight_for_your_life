@@ -19,8 +19,13 @@ body {
 #user-input {
   background-color: rgba(255, 56, 181, 0.5);
   border-color: none;
-  color: #38ff82;
+  color: #ffe638;
   width: 90%;
+}
+
+#first-text {
+  background-color: rgba(56, 181, 255, 0.5);
+  border-radius: 35%;
 }
 
 /* Chrome, Firefox, Opera, Safari 10.1+ */
