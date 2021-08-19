@@ -12,6 +12,7 @@ function changeRoom(dir) {
     $("#game-text").append("<p>" + rooms[currentRoom].description + "</p>");
   } else {
     $("#game-text").append("<p>You cannot go that way!</p>");
+    $("#game-text").append("<p>" + rooms[currentRoom].description + "</p>");
   }
 }
 
@@ -22,32 +23,9 @@ function getItem(get) {
     $("#game-text").append("<p>" + inventory + "</p>");
   } else {
     $("#game-text").append("<p>Nothing to grab here!!!</p>");
+    $("#game-text").append("<p>" + inventory + "</p>");
   }
 }
-
-// Show Items
-// function showItem() {
-//   if (rooms[currentItems].length === 0) {
-//     $("#game-text").append("<p>There are no items here!</p>");
-//     return;
-//   }
-//   $("#game-text").append("<p>Available items: </p>");
-//   $("#game-text").append("<p><ul>");
-//   for (var i = 0; i < rooms[currentItems].length; i++) {
-//     $("#game-text").append("<li>" + rooms[currentItems].length[i] + "</li>");
-//   }
-//   $("#game-text").append("</ul></p>");
-// }
-
-// Search room
-// function searchRoom(search) {
-//   if (rooms[currentRoom].items[search] !== undefined) {
-//     currentRoom = rooms[currentRoom].items[search];
-//     $("#game-text").append("<p>" + rooms[currentRoom].items + "</p>");
-//   } else {
-//     $("#game-text").append("<p>Nothing to grab here!!!</p>");
-//   }
-// }
 
 function showHelp() {
   // clear screen
@@ -58,11 +36,13 @@ function showHelp() {
     $("#game-text").append("<li>" + commands[i] + "</li>");
   }
   $("#game-text").append("</ul></p>");
+  $("#game-text").append("<p>" + rooms[currentRoom].description + "</p>");
 }
 
 function showInventory() {
   if (inventory.length === 0) {
     $("#game-text").append("<p>You are not carrying anything!</p>");
+    $("#game-text").append("<p>" + rooms[currentRoom].description + "</p>");
     return;
   }
   $("#game-text").append("<p>Here is your inventory: </p>");
@@ -127,6 +107,7 @@ $("#help").bind("click", function () {
       "</p>" +
       "</div>"
   );
+  $("#game-text").append("<p>" + rooms[currentRoom].description + "</p>");
 });
 
 // How to Start the game from the start button
@@ -147,8 +128,10 @@ $("#start-game").bind("click", function () {
 $("#inventory").bind("click", function () {
   document.getElementById("game-text").innerHTML = " ";
   $("#game-text").append("<p id=first-text>" + inventory + "</p>");
+  $("#game-text").append("<p>" + rooms[currentRoom].description + "</p>");
 });
 
+// First screen end user sees
 $(document).ready(function () {
   $("#game-text").append(
     "<h4 id=first-text>" +
