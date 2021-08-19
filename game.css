@@ -23,11 +23,6 @@ body {
   width: 90%;
 }
 
-#first-text {
-  background-color: rgba(56, 181, 255, 0.5);
-  border-radius: 35%;
-}
-
 /* Chrome, Firefox, Opera, Safari 10.1+ */
 ::placeholder {
   color: #38ff82;

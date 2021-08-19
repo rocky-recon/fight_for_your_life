@@ -10,7 +10,7 @@ const rooms = {
       weapon: "Skoal Wintergreen Long Cut",
       health: "Monster Energy Drink",
       weapon_desc:
-        "You feel a skoal wintergreen dip in the back pocket of your jeans. <br> You can <b>grab</b> the <b>weapon</b> as a weapon!",
+        "You feel a skoal wintergreen dip in the back pocket of your jeans. <br> You can <b>grab</b> the dip and use it as a <b>weapon</b>!",
       health_desc:
         "You see a Monster energy drink. It gives you energy but hurts your health...<br> You can <b>grab</b> the <b>health</b> for your new journey! ",
     },

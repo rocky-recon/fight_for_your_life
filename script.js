@@ -21,6 +21,7 @@ function getItem(get) {
   if (rooms[currentRoom].items[get] !== undefined) {
     inventory = rooms[currentRoom].items[get];
     $("#game-text").append("<p>" + inventory + "</p>");
+    $("#game-text").append("<p>" + rooms[currentRoom].description + "</p>");
   } else {
     $("#game-text").append("<p>Nothing to grab here!!!</p>");
     $("#game-text").append("<p>" + inventory + "</p>");
@@ -137,19 +138,17 @@ $(document).ready(function () {
   $("#game-text").append(
     "<div id=first-text>" +
       "<h4>" +
-      "How To Play My Text Adventure Game" +
+      "<b>How To Play My Text Adventure Game</b>" +
       "</h4> " +
       "<p>" +
       "You must type one of the followings " +
       // here are the commands work on , <b>'talk'</b>, <b>'display'</b>
-      "<b>'go'</b>,<b>'grab'</b>, <b>'inventory'</b> plus" +
-      " direction, weapon, health" +
-      "</p> " +
-      "<p>" +
-      "You can pick up weapons and health in every room." +
+      "<b>'go'</b>,<b>'grab'</b>, <b>'inventory'</b> plus " +
+      "<b>direction</b>, <b>weapon</b>, <b>health</b>." +
+      "<br>s" +
+      "You can <b>grab weapons</b> and <b>health</b> in every room." +
       "If you need any help you can select the <b> Help </b> button below. " +
-      "</p>" +
-      "<p>" +
+      "<br>" +
       "Press Start to begin the Game. <b> Good Luck </b>" +
       "</p>" +
       "</div>"
